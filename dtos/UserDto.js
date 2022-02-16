@@ -1,9 +1,11 @@
 export default class UserDto {
-    username;
     id;
+    username;
+    roles;
 
     constructor(model) {
-        this.email = model.username;
         this.id = model._id
+        this.email = model.username;
+        this.roles = model.roles;
     }
 }

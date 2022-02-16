@@ -7,7 +7,7 @@ const UserSchema = new Schema({
     lastname: { type: String, required: true },
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    balance: { type: String, default: "$0" },
+    balance: { type: Number, default: 0 },
     bookSubscription: { type: Boolean, default: false },
     linkBookSubscription: { type: Schema.Types.ObjectId, ref: "BookSubscription" },
     books: [{ type: Schema.Types.ObjectId, ref: "Book", max: 5 }],

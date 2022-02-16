@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 
 // Initialize API
 import clientUsersRoute from "../../components/client/users/usersApi.js";
+import crmUsersRoute from "../../components/crm/users/usersApi.js";
 
 config();
 
@@ -15,5 +16,6 @@ app.use(cookieParser());
 
 // API List
 app.use("/api/client/users", clientUsersRoute);
+app.use("/api/crm/users", crmUsersRoute);
 
 export default app;
