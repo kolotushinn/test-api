@@ -10,7 +10,7 @@ export default function (roles) {
       const token = req.headers.authorization.split(" ")[1];
 
       if (!token) {
-        return res.status(403).json({ message: "Пользователь не авторизован" });
+        return res.status(403).json({ message: "Not authorized!" });
       }
 
       const { roles: userRoles } = jwt.verify(
@@ -30,7 +30,7 @@ export default function (roles) {
         return res.status(403).json({
           statusCode: 403,
           stringStatus: "Forbidden",
-          message: "У вас нет доступа",
+          message: "Access is denied!",
         });
       }
 
@@ -40,7 +40,7 @@ export default function (roles) {
       return res.status(403).json({
         statusCode: 403,
         stringStatus: "Forbidden",
-        message: "Пользователь не авторизован",
+        message: "Not authorized!",
       });
     }
   };

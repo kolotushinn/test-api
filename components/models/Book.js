@@ -6,6 +6,7 @@ const BookSchema = new Schema({
     name: { type: String, required: true },
     author: { type: String, required: true },
     location: { type: String, required: true, default: "Library" },
+    uses: { type: Boolean, default: false },
     whoUses: { type: Schema.Types.ObjectId, ref: "User" },
 },
     {

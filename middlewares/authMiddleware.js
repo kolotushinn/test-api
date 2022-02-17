@@ -10,7 +10,7 @@ export default function authMiddleware(req, res, next) {
     if (!token) {
       return res.status(403).json({
         status: "error",
-        message: "Пользователь не авторизован!",
+        message: "Not authorized!",
       });
     }
 
@@ -22,7 +22,7 @@ export default function authMiddleware(req, res, next) {
     return res.status(401).json({
       statusCode: 401,
       stringStatus: "Unauthorized",
-      message: "Пользователь не авторизован!",
+      message: "Not authorized!",
     });
   }
 }
